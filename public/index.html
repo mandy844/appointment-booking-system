@@ -4,39 +4,67 @@
   <link rel="stylesheet" href="style.css">
   <title>Appointment System</title>
 </head>
+
 <body>
+
   <div class="container">
+
     <h1>Doctor Appointment System</h1>
-    
-    <!-- Step 1: Login -->
-    <div id="loginSection">
+
+    <!-- LOGIN BOX WRAPPER (this is what makes it look modern) -->
+    <div id="loginSection" class="login-box">
       <h2>Login</h2>
-      <input type="text" id="username" placeholder="Username (patient1)">
-      <input type="password" id="password" placeholder="Password (pass123)">
+
+      <label>Username</label>
+      <input type="text" id="username" placeholder="Enter username">
+
+      <label>Password</label>
+      <input type="password" id="password" placeholder="Enter password">
+
+      <!-- SHOW PASSWORD -->
+      <label style="display:flex; align-items:center; gap:8px; margin-top:5px;">
+        <input type="checkbox" onclick="togglePassword()" style="width:auto;">
+        Show Password
+      </label>
+
       <button onclick="login()">Login</button>
     </div>
 
-    <!-- Dashboard (shown after login) -->
+    <!-- DASHBOARD -->
     <div id="dashboard" style="display:none">
       <h2>Welcome, <span id="userName"></span></h2>
-      
-      <!-- Step 5: Select specialty -->
-      <input type="text" id="specialty" placeholder="Specialty (Cardiology, Dermatology, Neurology)">
+
+      <label>Specialty</label>
+      <input type="text" id="specialty" placeholder="Cardiology, Dermatology, Neurology">
+
       <button onclick="loadDoctors()">Show Doctors</button>
-      
-      <!-- Step 8: Display doctors + slots -->
+
       <div id="doctorsList"></div>
-      
-      <!-- Booking form (step 12a) -->
+
       <div id="bookingForm" style="display:none">
         <h3>Confirm Appointment</h3>
+
+        <label>Email</label>
         <input type="text" id="patientEmail" placeholder="Email">
+
+        <label>Phone</label>
         <input type="text" id="patientPhone" placeholder="Phone">
+
         <button onclick="confirmBooking()">Submit Booking</button>
       </div>
     </div>
+
   </div>
-  
+
   <script src="script.js"></script>
+
+  <!-- SHOW PASSWORD FUNCTION -->
+  <script>
+    function togglePassword() {
+      const pass = document.getElementById("password");
+      pass.type = pass.type === "password" ? "text" : "password";
+    }
+  </script>
+
 </body>
 </html>

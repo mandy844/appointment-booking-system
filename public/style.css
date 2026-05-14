@@ -1,42 +1,108 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f0f2f5;
+  background: #0f1b2d;
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  color: #e6e6e6;
 }
 
+/* main container */
 .container {
-  max-width: 800px;
-  margin: auto;
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 850px;
+  margin: 40px auto;
+  background: #1b263b;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
+/* headings */
+h1, h2, h3 {
+  color: #ffffff;
+}
+
+/* doctor cards */
 .doctor-card {
-  border: 1px solid #ddd;
-  padding: 12px;
+  border: 1px solid #2c3e50;
+  padding: 15px;
   margin: 12px 0;
-  border-radius: 8px;
-  background: #fafafa;
+  border-radius: 10px;
+  background: #243447;
+  transition: 0.2s ease;
 }
 
+.doctor-card:hover {
+  transform: translateY(-2px);
+  background: #2c3e50;
+}
+
+/* slots buttons (kept specific so it doesn't clash with login buttons) */
 .slots button {
   margin: 6px;
-  padding: 8px 12px;
-  background: #007bff;
+  padding: 10px 14px;
+  background: #1f6feb;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: 0.2s;
 }
 
 .slots button:hover {
-  background: #0056b3;
+  background: #144ea8;
+  transform: translateY(-1px);
 }
 
-input, button {
-  padding: 8px;
-  margin: 6px;
+/* INPUT FIELDS */
+input {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #3a4a5f;
+  background: #2c3e50;
+  color: white;
+  font-size: 14px;
+  transition: all 0.25s ease;
+}
+
+/* placeholder */
+input::placeholder {
+  color: #aab4c0;
+}
+
+/* focus effect (this is what makes it feel modern) */
+input:focus {
+  border-color: #1f6feb;
+  background: #243447;
+  box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.25);
+  outline: none;
+}
+
+/* GENERAL BUTTON (login + others) */
+button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+  background: #1f6feb;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background: #144ea8;
+  transform: translateY(-1px);
+}
+
+/* small improvement for layout spacing */
+label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  color: #cfd6e4;
+  font-size: 13px;
 }

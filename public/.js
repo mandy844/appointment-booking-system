@@ -82,6 +82,11 @@ async function confirmBooking() {
       patientDetails: { email, phone }
     })
   });
+  function selectDoctor(name) {
+  alert("You selected " + name);
+
+  document.getElementById("bookingForm").style.display = "block";
+}
   
   if (res.ok) {
     alert('✅ Appointment confirmed! Check console for SMS/email/push logs.');
